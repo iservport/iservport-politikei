@@ -21,33 +21,33 @@ class VoteController(service: VoteService) {
   def getAll(principal: Principal, @PathVariable propositionId: String) = service.all(propositionId)
 
   /**
-    * GET /api/vote/?propositionId=
+    * GET /api/vote/?voteId=
     *
     * @param principal usuário autenticado (injetado pelo container)
-    * @param propositionId id da proposição
-    * @return a proposição solicitada
+    * @param voteId id do voto
+    * @return o voto solicitado
     */
-  @GetMapping(params = Array("propositionId"))
-  def getOne(principal: Principal, @RequestParam propositionId: String) = service.one(propositionId)
+  @GetMapping(params = Array("voteId"))
+  def getOne(principal: Principal, @RequestParam voteId: String) = service.one(voteId)
 
   /**
-    * POST /api/vote/?entityId=
+    * PUT /api/vote/up
     *
-    * @param principal usuário autenticado (injetado pelo container)
-    * @param entityId id da entidade, ou seja, a câmara legislativa onde a proposta está inscrita
-    * @return uma nova proposição
-    */
-  @PostMapping(params = Array("entityId"))
-  def postNew(principal: Principal, @RequestParam entityId: String) = new Proposition(entityId)
-
-  /**
-    * PUT /api/vote
-    * 
     * @param principal usuário autenticado (injetado pelo container)
     * @param command a proposição a salvar ou atualizar.
     * @return a proposição atualizada
     */
   @PutMapping
-  def putUpdate(principal: Principal, @RequestBody command: Proposition) = service.saveOrUpdate(command)
+  def voteUp(principal: Principal, @RequestBody command: Proposition) = service.saveOrUpdate(command)
+
+  /**
+    * PUT /api/vote/down
+    *
+    * @param principal usuário autenticado (injetado pelo container)
+    * @param command a proposição a salvar ou atualizar.
+    * @return a proposição atualizada
+    */
+  @PutMapping
+  def voteDown(principal: Principal, @RequestBody command: Proposition) = service.saveOrUpdate(command)
 
 }
