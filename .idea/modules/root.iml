@@ -22,6 +22,14 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: antlr:antlr:2.7.7:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.security.oauth:spring-security-oauth2:2.0.11.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.security:spring-security-web:3.2.8.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.security:spring-security-core:3.2.8.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.springframework.security:spring-security-config:3.2.8.RELEASE:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.codehaus.jackson:jackson-mapper-asl:1.9.13:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.codehaus.jackson:jackson-core-asl:1.9.13:jar" level="project" />
+    <orderEntry type="library" name="SBT: commons-codec:commons-codec:1.9:jar" level="project" />
+    <orderEntry type="library" name="SBT: aopalliance:aopalliance:1.0:jar" level="project" />
     <orderEntry type="library" name="SBT: ch.qos.logback:logback-classic:1.1.7:jar" level="project" />
     <orderEntry type="library" name="SBT: ch.qos.logback:logback-core:1.1.7:jar" level="project" />
     <orderEntry type="library" name="SBT: com.fasterxml:classmate:1.1.0:jar" level="project" />
