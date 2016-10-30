@@ -33,21 +33,23 @@ class VoteController(service: VoteService) {
   /**
     * PUT /api/vote/up
     *
+    // FIXME: implementar
+    *
     * @param principal usuário autenticado (injetado pelo container)
-    * @param command a proposição a salvar ou atualizar.
-    * @return a proposição atualizada
+    * @return o voto atualizada
     */
-  @PutMapping
-  def voteUp(principal: Principal, @RequestBody command: Proposition) = service.saveOrUpdate(command)
+  @PutMapping(Array("/up"))
+  def voteUp(principal: Principal) = ???
 
   /**
     * PUT /api/vote/down
     *
+    // FIXME: implementar
+    *
     * @param principal usuário autenticado (injetado pelo container)
-    * @param command a proposição a salvar ou atualizar.
-    * @return a proposição atualizada
+    * @return o voto atualizada
     */
-  @PutMapping
-  def voteDown(principal: Principal, @RequestBody command: Proposition) = service.saveOrUpdate(command)
+  @PutMapping(Array("/down"))
+  def voteDown(principal: Principal) = ???
 
 }
