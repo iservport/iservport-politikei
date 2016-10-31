@@ -7,7 +7,7 @@ spring:
     password:
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
   jpa:
     generate-ddl: true
@@ -26,4 +26,4 @@ security:
       user-authorization-uri: http://localhost:8081/oauth/authorize
     resource:
       jwt:
-        keyUri: http://localhost:8081/auth/oauth/token_key
+        keyUri: http://localhost:8081/oauth/token_key
