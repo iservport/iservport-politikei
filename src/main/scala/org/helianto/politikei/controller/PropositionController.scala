@@ -4,10 +4,12 @@ import java.security.Principal
 
 import org.helianto.politikei.domain.Proposition
 import org.helianto.politikei.service.PropositionService
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation._
 
 @RestController
 @RequestMapping(Array("/api/proposition"))
+//@PreAuthorize("isAuthenticated()")
 class PropositionController(service: PropositionService) {
 
   /**

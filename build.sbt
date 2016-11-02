@@ -5,16 +5,17 @@ lazy val root = (project in file("."))
   .enablePlugins(DockerPlugin)
   .settings(
     name := "iservport-politikei",
-    version := "0.2.1.RELEASE",
+    version := "0.2.2.RELEASE",
     mainClass in (Compile) := Some("org.helianto.politikei.Application"),
     dockerBaseImage := "azul/zulu-openjdk:8",
     dockerUpdateLatest := true,
-    dockerExposedPorts := Seq(8088),
+    dockerExposedPorts := Seq(8090),
     dockerExposedVolumes := Seq("/opt/data"),
     dockerRepository := Some("iservport"),
     libraryDependencies ++= Seq(
       "org.springframework.boot"           % "spring-boot-starter-web"      % "1.4.0.RELEASE",
       "org.springframework.boot"           % "spring-boot-starter-data-jpa" % "1.4.0.RELEASE",
+      "org.springframework.boot"           % "spring-boot-starter-security" % "1.4.0.RELEASE",
       "org.springframework.security.oauth" % "spring-security-oauth2"       % "2.0.11.RELEASE",
       "org.springframework.security"       % "spring-security-jwt"          % "1.0.5.RELEASE",
       "com.h2database"                     % "h2"                % "1.4.192",

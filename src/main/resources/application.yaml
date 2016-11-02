@@ -1,3 +1,7 @@
+server:
+  host: localhost
+  port: 8090
+  context-path: /politikei
 spring:
   datasource:
     initialize: true
@@ -7,23 +11,33 @@ spring:
     password:
   h2:
     console:
-      enabled: false
+      enabled: true
       path: /h2-console
   jpa:
     generate-ddl: true
     hibernate.ddl-auto: update
-server:
-  host: localhost
-  port: 8090
 security:
   oauth2:
     client:
-      client-id: iservport-secret-client
-      client-secret: secret
+      client-id: iservport-trusted-client
       scope: read,write
-      auto-approve-scopes: '.*'
-      access-token-uri: http://localhost:8081/oauth/token
-      user-authorization-uri: http://localhost:8081/oauth/authorize
+      authorized-grant-types: authorization_code
+      accessTokenUri: http://localhost:8081/oauth/token
+      userAuthorizationUri: http://localhost:8081/oauth/authorize
     resource:
       jwt:
-        keyUri: http://localhost:8081/oauth/token_key
+#        key-uri: http://localhost:8081/oauth/token_key
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApUzN1WkOas3R8908zqos
+          WPqfZW0JEXqApe9/jRBQM2sCmdoRSTTeF53OQeDfBpKNYjeVk2WDVd694Mil2yuZ
+          jhqvkRbV51OndCq41Zve45HHNK63mdwd7s0QpPrL0m/QAn3XkduLIW/NlVkR6oQX
+          k4EHNx+8AjBPbEVyIPpr71549isjECyI9Nh2rooR+g9pEk/U52YGtW1PjYBT9NRJ
+          MatpqJ7dv02Iu5sF32wopHGe/rCgFX2XdHrWRCjpX0gkeNtD0QK5JRMLerySlF0c
+          kcI3PnDDFLhGGxxylT9FaYEW50HYnHaBIKQfXcBpf8yHka3wkeR+t1Wrpu3vcIhT
+          mQIDAQAB
+          -----END PUBLIC KEY-----
+
+logging:
+  level:
+    org.springframework.security: DEBUG
