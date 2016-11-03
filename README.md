@@ -50,6 +50,8 @@ Aplicativo iOS.
 
 A API está [aqui](./docs/index.html)
 
+<iframe src="./docs/index.html"></iframe>
+
 # Licença
 
 Os módulos do Politikei são distribuídos pela Licença Apache 2.0
