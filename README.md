@@ -48,7 +48,7 @@ Aplicativo iOS.
 
 ## API
 
-A API está [aqui](docs/index.html)
+A API está [aqui](./docs/index.html)
 
 # Licença
 
