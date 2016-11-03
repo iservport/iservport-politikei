@@ -5,7 +5,7 @@ lazy val root = (project in file("."))
   .enablePlugins(DockerPlugin)
   .settings(
     name := "iservport-politikei",
-    version := "0.3.0.RELEASE",
+    version := "0.3.1.RELEASE",
     mainClass in (Compile) := Some("org.helianto.politikei.Application"),
     dockerBaseImage := "azul/zulu-openjdk:8",
     dockerUpdateLatest := true,
@@ -18,11 +18,14 @@ lazy val root = (project in file("."))
       "org.springframework.boot"           % "spring-boot-starter-security" % "1.4.0.RELEASE",
       "org.springframework.security.oauth" % "spring-security-oauth2"       % "2.0.11.RELEASE",
       "org.springframework.security"       % "spring-security-jwt"          % "1.0.5.RELEASE",
-      "com.h2database"                     % "h2"                % "1.4.192",
-      "commons-io"                         % "commons-io"        % "2.4",
-      "org.scalatest"                     %% "scalatest"         % "3.0.0"   % "test",
-      "org.mockito"                        % "mockito-all"       % "1.10.19" % "test",
-      "org.slf4j"                          % "slf4j-simple"      % "1.7.14"
+      "com.h2database"                     % "h2"                   % "1.4.192",
+      "commons-io"                         % "commons-io"           % "2.4",
+      "io.springfox"                       % "springfox-swagger2"   % "2.6.0",
+      "io.springfox"                       % "springfox-swagger-ui" % "2.6.0",
+      "io.swagger"                         % "swagger-core"         % "1.5.10",
+      "org.scalatest"                     %% "scalatest"            % "3.0.0"   % "test",
+      "org.mockito"                        % "mockito-all"          % "1.10.19" % "test",
+      "org.slf4j"                          % "slf4j-simple"         % "1.7.14"
     )
   )
 

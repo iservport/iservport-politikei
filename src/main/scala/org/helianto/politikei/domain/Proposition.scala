@@ -3,6 +3,8 @@ package org.helianto.politikei.domain
 import java.util.UUID
 import javax.persistence._
 
+import org.helianto.politikei.repository.VoteCountProjection
+
 import scala.beans.BeanProperty
 
 /**
@@ -22,6 +24,7 @@ class Proposition
   @BeanProperty                       var docType: Int = 0
   @BeanProperty                       var votedUp: Int = 0
   @BeanProperty                       var votedDown: Int = 0
+  @BeanProperty                       var votedOther: Int = 0
 
   def this() = this("") // empty constructor
 
@@ -32,6 +35,17 @@ class Proposition
     docType = command.docType
     votedUp = command.votedUp
     votedDown = command.votedDown
+    votedOther = command.votedOther
+    this
+  }
+
+  def merge(votes: VoteCountProjection) = {
+    Option(votes) match {
+      case Some(v) if v.getVoteCount == 1 =>  votedUp = v.getVoteCount
+      case Some(v) if v.getVoteCount == -1 => votedDown = v.getVoteCount
+      case Some(v) => votedOther = v.getVoteCount
+      case _ =>
+    }
     this
   }
 

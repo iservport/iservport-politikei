@@ -37,7 +37,12 @@ security:
           kcI3PnDDFLhGGxxylT9FaYEW50HYnHaBIKQfXcBpf8yHka3wkeR+t1Wrpu3vcIhT
           mQIDAQAB
           -----END PUBLIC KEY-----
-
+# location of the swagger json
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /swagger.json
 logging:
   level:
     org.springframework.security: DEBUG

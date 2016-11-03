@@ -1,7 +1,5 @@
 package org.helianto.politikei.controller
 
-import java.security.Principal
-
 import org.helianto.politikei.domain.Proposition
 import org.helianto.politikei.service.{AuthorityExtractor, PropositionService}
 import org.springframework.security.oauth2.provider.OAuth2Authentication
