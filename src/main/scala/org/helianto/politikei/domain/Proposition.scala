@@ -25,4 +25,14 @@ class Proposition
 
   def this() = this("") // empty constructor
 
+  def merge(command: Proposition) = {
+    docCode = command.docCode
+    docAbstract = command.docAbstract
+    docContent = command.docContent
+    docType = command.docType
+    votedUp = command.votedUp
+    votedDown = command.votedDown
+    this
+  }
+
 }

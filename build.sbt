@@ -5,7 +5,7 @@ lazy val root = (project in file("."))
   .enablePlugins(DockerPlugin)
   .settings(
     name := "iservport-politikei",
-    version := "0.2.2.RELEASE",
+    version := "0.3.0.RELEASE",
     mainClass in (Compile) := Some("org.helianto.politikei.Application"),
     dockerBaseImage := "azul/zulu-openjdk:8",
     dockerUpdateLatest := true,

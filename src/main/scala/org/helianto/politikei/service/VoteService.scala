@@ -1,20 +1,27 @@
 package org.helianto.politikei.service
 
-import org.helianto.politikei.domain.Proposition
+import org.helianto.politikei.domain.Vote
 import org.helianto.politikei.repository.VoteRepository
 import org.springframework.data.domain.{PageRequest, Sort}
 import org.springframework.stereotype.Service
 
 @Service
-class VoteService(repository: VoteRepository) {
+class VoteService(val repository: VoteRepository) {
 
-  private def page(page: Int) = new PageRequest(page, 10, Sort.Direction.ASC, "voteDate")
+  private[service] def page(page: Int) = new PageRequest(page, 10, Sort.Direction.ASC, "voteDate")
 
-  def all(propositionId: String) = repository.findByPropositionId(propositionId, page(0))
+  def all(propositionId: String, p: Int = 0) = repository.findByPropositionId(Option(propositionId).getOrElse(""), page(0))
 
-  def one(propositionId: String) = repository.findOne(propositionId)
+  def one(voteId: String) = repository.findOne(Option(voteId).getOrElse(""))
 
-  def saveOrUpdate(command: Proposition) = ???
-
+  def saveOrUpdate(propositionId: String, identityId: String, vote: Int) = {
+    require(Option(propositionId).nonEmpty)
+    require(Option(identityId).nonEmpty)
+    repository.save {
+      Option(repository.findByPropositionIdAndIdentityId(propositionId, identityId))
+        .getOrElse(new Vote(propositionId, identityId))
+        .merge(vote)
+    }
+  }
 
 }

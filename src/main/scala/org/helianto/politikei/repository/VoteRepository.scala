@@ -8,6 +8,8 @@ trait VoteRepository extends JpaRepository[Vote, String] {
 
   def findByPropositionId(propositionId: String, page: Pageable): Page[Vote]
 
+  def findByPropositionIdAndIdentityId(propositionId: String, identityId: String): Vote
+
   @Query("select v_.propositionId, v_.vote, count(v_.id) as VoteCount from Vote v_ where v_.propositionId = ?1 group by v_.vote ")
   def countVote(propositionId: String): java.util.List[VoteCountProjection]
 

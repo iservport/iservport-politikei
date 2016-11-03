@@ -1,5 +1,6 @@
 package org.helianto.politikei;
 
+import org.helianto.politikei.domain.Politikei;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -13,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication(scanBasePackages={"org.helianto.*.service","org.helianto.*.controller"})
 @EnableJpaRepositories(basePackages={"org.helianto.*.repository"})
-@EntityScan(basePackages={"org.helianto.*.domain"})
+@EntityScan(basePackageClasses={Politikei.class})
 @EnableOAuth2Sso
 @EnableResourceServer
 public class Application extends WebMvcConfigurerAdapter {
@@ -31,7 +32,9 @@ public class Application extends WebMvcConfigurerAdapter {
             http
                     .requestMatchers().antMatchers("/")
                     .and()
-                    .authorizeRequests().anyRequest().access("#oauth2.hasScope('write')");
+                    .authorizeRequests().anyRequest().access("#oauth2.hasScope('write')")
+                    .and().csrf().disable()
+                    ;
             // @formatter:on
         }
 

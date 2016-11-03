@@ -20,4 +20,9 @@ class Vote
 
   def this() = this("", "") // empty constructor
 
+  def merge(_vote: Int) = {
+    vote = _vote
+    this
+  }
+
 }
