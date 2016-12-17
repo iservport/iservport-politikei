@@ -2,6 +2,12 @@ server:
   host: localhost
   port: 8090
   context-path: /politikei
+helianto:
+  host: localhost
+  title: Politikei
+  base-name: politikei
+  api:
+    url: http://${helianto.host}:8081
 spring:
   datasource:
     initialize: true
@@ -9,13 +15,16 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
   jpa:
     generate-ddl: true
     hibernate.ddl-auto: update
+  freemarker:
+    template-loader-path: classpath:/templates/, /templates/
+    prefer-file-system-access: false
 security:
   oauth2:
     client:
@@ -45,4 +54,4 @@ springfox:
         path: /swagger.json
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: INFO

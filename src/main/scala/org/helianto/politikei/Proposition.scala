@@ -1,4 +1,4 @@
-package org.helianto.politikei.domain
+package org.helianto.politikei
 
 import java.util.UUID
 import javax.persistence._

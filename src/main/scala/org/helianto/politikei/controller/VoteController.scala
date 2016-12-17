@@ -48,6 +48,17 @@ class VoteController(service: VoteService) extends AuthorityExtractor {
     */
   @PutMapping(Array("/down"))
   def voteDown(implicit principal: OAuth2Authentication, @PathVariable propositionId: String) =
-    service.saveOrUpdate(propositionId, _identityId, -1)
+  service.saveOrUpdate(propositionId, _identityId, -1)
+
+  /**
+    * PUT /api/vote/other
+    *
+    * @param principal usuário autenticado (injetado pelo container)
+    * @param propositionId id da proposição
+    * @return o voto atualizada
+    */
+  @PutMapping(Array("/other"))
+  def voteOther(implicit principal: OAuth2Authentication, @PathVariable propositionId: String) =
+  service.saveOrUpdate(propositionId, _identityId, 0)
 
 }

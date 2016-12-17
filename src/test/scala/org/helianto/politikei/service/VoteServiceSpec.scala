@@ -1,7 +1,6 @@
 package org.helianto.politikei.service
 
-import org.helianto.politikei.UnitSpec
-import org.helianto.politikei.domain.{Proposition, Vote}
+import org.helianto.politikei.{Proposition, UnitSpec, Vote}
 import org.helianto.politikei.repository.{PropositionRepository, VoteRepository}
 import org.springframework.data.domain.PageImpl
 

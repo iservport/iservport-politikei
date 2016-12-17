@@ -1,6 +1,6 @@
 package org.helianto.politikei.service
 
-import org.helianto.politikei.domain.Proposition
+import org.helianto.politikei.Proposition
 import org.helianto.politikei.repository.PropositionRepository
 import org.springframework.data.domain.{PageRequest, Sort}
 import org.springframework.stereotype.Service

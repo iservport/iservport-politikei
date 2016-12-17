@@ -1,6 +1,6 @@
 package org.helianto.politikei.repository
 
-import org.helianto.politikei.domain.Vote
+import org.helianto.politikei.Vote
 import org.springframework.data.domain.{Page, Pageable}
 import org.springframework.data.jpa.repository.{JpaRepository, Query}
 
