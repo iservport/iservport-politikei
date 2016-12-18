@@ -1,0 +1,11 @@
+<md-toolbar class="md-primary md-hue-1 md-toolbar-tools" layout="row">
+    <md-button class="menu" ng-click="toggleMenu()" hide-gt-sm aria-label="${top_title_aria_label!'Helianto'}">
+        x
+    </md-button>
+    <img hide-xs src="images/logo_white_small.png" class="icon-logo" alt="Politikei" />
+    <span flex></span>
+    <div flex="none" class="user-menu">
+        <span class="avatar-text">${top_title_greeting!'Hello, '}{{me.displayName}}</span>
+        <img class="avatar" data-ng-src="{{me.imageUrl}}" style="height:32px; width:32px;" />
+    </div>
+</md-toolbar>

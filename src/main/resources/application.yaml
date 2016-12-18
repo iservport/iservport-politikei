@@ -9,6 +9,9 @@ helianto:
   api:
     url: http://${helianto.host}:8081
 spring:
+# Profiles
+  profiles:
+    active: test
   datasource:
     initialize: true
     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=- 1;DB_CLOSE_ON_EXIT=FALSE
@@ -54,4 +57,4 @@ springfox:
         path: /swagger.json
 logging:
   level:
-    org.springframework.security: INFO
+    org.springframework.security: DEBUG

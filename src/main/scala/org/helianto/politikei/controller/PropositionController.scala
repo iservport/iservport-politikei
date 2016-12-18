@@ -6,7 +6,7 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication
 import org.springframework.web.bind.annotation._
 
 @RestController
-@RequestMapping(Array("/api/proposition"))
+@RequestMapping(Array("/api/proposition", "/proposition"))
 class PropositionController(service: PropositionService) extends AuthorityExtractor {
 
   /**
@@ -49,8 +49,8 @@ class PropositionController(service: PropositionService) extends AuthorityExtrac
     * @param entityId id da entidade, ou seja, a câmara legislativa onde a proposta está inscrita
     * @return uma nova proposição
     */
-  @PostMapping(params = Array("entityId"))
-  def postNew(implicit principal: OAuth2Authentication, @RequestParam entityId: String) = new Proposition(entityId)
+  @PostMapping
+  def postNew(implicit principal: OAuth2Authentication, @RequestBody entityId: String) = new Proposition(entityId)
 
   /**
     * PUT /api/proposition

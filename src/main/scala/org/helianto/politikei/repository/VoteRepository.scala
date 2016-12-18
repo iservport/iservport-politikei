@@ -1,6 +1,7 @@
 package org.helianto.politikei.repository
 
 import org.helianto.politikei.Vote
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.data.domain.{Page, Pageable}
 import org.springframework.data.jpa.repository.{JpaRepository, Query}
 
@@ -10,7 +11,8 @@ trait VoteRepository extends JpaRepository[Vote, String] {
 
   def findByPropositionIdAndIdentityId(propositionId: String, identityId: String): Vote
 
-  @Query("select v_.propositionId, v_.vote, count(v_.id) as VoteCount from Vote v_ where v_.propositionId = ?1 group by v_.vote ")
+  @Query("select v_.propositionId as propositionId, v_.vote as vote, count(v_.id) as voteCount " +
+    "from Vote v_ where v_.propositionId = ?1 group by v_.vote ")
   def countVote(propositionId: String): java.util.List[VoteCountProjection]
 
 }
@@ -21,7 +23,7 @@ trait VoteCountProjection {
 
   def getVote: Int
 
-  def getVoteCount: Int
+  def getVoteCount: Long
 
 }
 

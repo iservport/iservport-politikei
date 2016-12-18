@@ -14,6 +14,9 @@ class VoteService(val repository: VoteRepository, val propositionRepository: Pro
 
   def one(voteId: String) = repository.findOne(Option(voteId).getOrElse(""))
 
+  def me(propositionId: String, identityId: String) =
+    repository.findByPropositionIdAndIdentityId(Option(propositionId).getOrElse(""), identityId)
+
   def saveOrUpdate(propositionId: String, identityId: String, value: Int) = {
     require(Option(propositionId).nonEmpty)
     require(Option(identityId).nonEmpty)
@@ -32,7 +35,9 @@ class VoteService(val repository: VoteRepository, val propositionRepository: Pro
 
   private[service] def applyTo(proposition: Proposition) = {
     import collection.JavaConversions._
-    repository.countVote(proposition.id).toList.foreach{i => proposition.merge(i)}
+    repository.countVote(proposition.id).toList.foreach{i =>
+      println(s"VOTE: $i")
+      proposition.merge(i)}
     propositionRepository.save(proposition)
   }
 

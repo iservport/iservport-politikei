@@ -1,0 +1,19 @@
+<form name="colorForm">
+    <md-input-container class="md-block">
+        <label>${label_docCode!''}</label>
+        <input type="text" ng-model="$politikei.proposition.docCode" required md-maxlength="32">
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>${label_docAbstract!''}</label>
+        <textarea rows="5" ng-model="$politikei.proposition.docAbstract" required md-maxlength="256"></textarea>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>${label_docContent!''}</label>
+        <textarea rows="5" ng-model="$politikei.proposition.docContent" required ></textarea>
+    </md-input-container>
+    <div layout-wrap>
+        <md-button class="md-raised md-primary" ng-click="$politikei.updateProposition()">
+            Salvar
+        </md-button>
+    </div>
+</form>

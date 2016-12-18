@@ -1,0 +1,40 @@
+<div layout="row" style="height: inherit;" >
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"  >
+        <md-list>
+            <img hide-gt-xs show-xs src="images/logo_white_small.png" class="icon-logo" alt="Politikei" />
+            <md-list-item>
+                <p>${menu_navigate}:</p>
+            </md-list-item>
+
+            <md-list-item data-ng-click="$view.select(0);" data-ng-class="{ 'nav-active': $view.isSelected(0) }">
+                <img src="images/nav_projetos.png" width="24" height="21" />
+                <span> ${menu_00}</span>
+            </md-list-item>
+
+            <md-list-item data-ng-click="$view.select(10)" data-ng-class="{ 'nav-active': $view.isSelected(1) }">
+                <img src="images/nav_ranking.png" width="21" height="21" />
+                <span> ${menu_10}</span>
+            </md-list-item>
+
+            <md-list-item>
+                <p>Politikei:</p>
+            </md-list-item>
+
+            <md-list-item data-ng-click="$view.select(98);" data-ng-class="{ 'nav-active': $view.isSelected(98) }">
+                <span>${menu_about}</span>
+            </md-list-item>
+
+            <md-list-item data-ng-click="$view.select(97);" data-ng-class="{ 'nav-active': $view.isSelected(97) }">
+                <span>${menu_invite}</span>
+            </md-list-item>
+
+            <md-list-item data-ng-click="$view.select(99);" data-ng-class="{ 'nav-active': $view.isSelected(99) }">
+                <span>${menu_rate}</span>
+            </md-list-item>
+
+            <md-list-item ng-click="$view.logout()">
+                <span>${menu_exit}</span>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+</div>

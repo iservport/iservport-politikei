@@ -14,11 +14,13 @@ import scala.beans.BeanProperty
 class Vote
 ( @BeanProperty @Column(length = 32) var propositionId: String
 , @BeanProperty @Column(length = 32) var identityId: String) {
-  @BeanProperty @Id                  var id: String = UUID.randomUUID().toString.replaceAll("", "")
+  @BeanProperty @Id                  var id: String = UUID.randomUUID().toString.replaceAll("-", "")
   @BeanProperty @Temporal(TemporalType.TIMESTAMP) var voteDate: Date = new Date()
   @BeanProperty                      var vote: Int = 0
 
   def this() = this("", "") // empty constructor
+
+  def isValid = vote!=0
 
   def merge(_vote: Int) = {
     vote = _vote

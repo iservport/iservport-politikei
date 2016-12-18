@@ -1,0 +1,48 @@
+<div >
+    <md-button class="md-raised md-primary md-button md-ink-ripple"
+            data-ng-click="$politikei.newProposition(entity.id);$view.select(1);" style="margin-top: 10px;">
+        <span>${label_newDoc}</span>
+    </md-button>
+</div>
+<div class="proposicao ng-scope flex-gt-md-45 flex-auto" ng-repeat="proposition in $politikei.propositionList.content" flex="auto" flex-gt-md="45">
+    <div ng-if="proposition.docAbstract" class="ng-scope">
+    <md-card ng-class="{favor: proposicao.voto_usuario.voto == '1', contra: proposicao.voto_usuario.voto == '0', indeciso:proposicao.voto_usuario.voto == '2'}" class="_md">
+        <md-card-header>
+            <md-card-header-text>
+                <div layout="row" class="layout-row">
+                    <div layout="column" class="layout-column">
+                        <span md-colors="{color:'primary-500'}" class="md-title" style="color: rgb(17, 173, 160);">
+                            {{proposition.docAbstract}}
+                        </span>
+                        <span md-colors="{color:'primary-500'}" class="md-subhead" style="color: rgb(17, 173, 160);">${label_docCode}: {{proposition.docCode}}</span>
+                    </div>
+                    <span flex="" class="flex"></span>
+                </div>
+            </md-card-header-text>
+        </md-card-header>
+        <md-card-content>
+            <p>${label_docContent}: {{proposition.docContent}}</p>
+        </md-card-content>
+        <md-card-content>
+            <p>${label_votedUp}: {{proposition.votedUp}} ${label_votedDown}: {{proposition.votedDown}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="center center" class="layout-align-center-center layout-row">
+            <div >
+                <div layout="column" layout-align="center" >
+                    <section layout="row" layout-align="center" data-vote-item="{{proposition.id}}" csrf="{{$politikei._csrf}}"></section>
+                    <section layout="row" layout-align="center" >
+                        <md-button class="md-raised md-primary md-ink-ripple"
+                                   data-ng-click="proposicoes.showProposicao($event, proposicao)" style="margin-top: 10px;">
+                            <span class="ng-scope">${label_fullDoc}</span>
+                        </md-button>
+                        <md-button class="md-raised md-primary md-button md-ink-ripple"
+                                   data-ng-click="$politikei.getProposition(proposition.id);$view.select(1);" style="margin-top: 10px;">
+                            <span>${label_editDoc}</span>
+                        </md-button>
+                    </section>
+                </div>
+            </div>
+        </md-card-actions>
+    </md-card>
+</div>
+</div>

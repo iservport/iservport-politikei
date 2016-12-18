@@ -5,15 +5,15 @@ lazy val root = (project in file("."))
   .enablePlugins(DockerPlugin)
   .settings(
     name := "iservport-politikei",
-    version := "0.4.0.RELEASE",
+    version := "0.4.1.RELEASE",
     mainClass in Compile := Some("org.helianto.politikei.Application"),
-    dockerBaseImage := "azul/zulu-openjdk:8",
+    dockerBaseImage := "anapsix/alpine-java:latest",
     dockerUpdateLatest := true,
     dockerExposedPorts := Seq(8090),
     dockerExposedVolumes := Seq("/opt/data"),
     dockerRepository := Some("iservport"),
     libraryDependencies ++= Seq(
-      "org.helianto"            %% "helianto-material-skin"       % "1.1.3.RELEASE",
+      "org.helianto"            %% "helianto-material-skin"       % "1.1.7.RELEASE",
       "org.springframework.boot" % "spring-boot-starter-actuator" % "1.4.1.RELEASE"
     )
   )

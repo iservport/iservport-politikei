@@ -1,0 +1,319 @@
+/* Primary content area */
+
+#content {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+}
+
+#content .md-button.contact {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    margin: 8px auto 16px 0;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+
+#content md-icon.avatar {
+    margin-top: 10px;
+}
+
+#content .md-button.contact > md-icon {
+    fill: black;
+    width: 36px;
+    height: 36px;
+}
+
+#content .md-button.contact:active > md-icon {
+    background-color: #dadada;
+    border-radius: 75%;
+    padding: 4px;
+    transition: all 100ms ease-out 30ms;
+}
+
+.avatar {
+    /* does not work on IE and Edge */
+    object-fit: cover;
+    /* overflow hidden is not necessary in some browsers. */
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 8px 5px;
+}
+
+.user-menu {
+    padding-left: 10px;
+    text-align: center;
+    margin: inherit;
+    background-color: #11A294;
+    width: 180px;
+}
+
+.avatar-text {
+    padding-right: 10px;
+    margin: auto;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+md-bottom-sheet md-icon {
+    margin-right: 20px;
+}
+
+span.name {
+    font-weight: bold;
+    font-size: 1.1em;
+    padding-left: 5px;
+}
+
+.thumb-up-btn {
+    margin-bottom: 7px
+}
+
+button md-icon {
+    margin-left: 5px;
+}
+
+.thumb-down-btn {
+    margin-bottom: 2px
+}
+
+.proposicao {
+    margin: 20px;
+}
+
+.proposicao-header {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.proposicao-divisor {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.proposicao md-card.favor {
+    border-bottom: 30px solid green;
+}
+
+.proposicao md-card.contra {
+    border-bottom: 30px solid red;
+}
+
+.proposicao md-card.indeciso {
+    border-bottom: 30px solid yellow;
+}
+
+md-card {
+    background-color: #fff;
+}
+
+.proposicao md-card {
+    padding: 15px;
+}
+
+
+/* We can't set two different bg color on the default theme.
+   So to make it easier, the color profile of the navigation menu is being set
+   manyally.
+*/
+
+.nav-active {
+    background-color: #2E4152;
+}
+
+md-list-item {
+    color: white;
+}
+
+md-list-item img {
+    margin-right: 8px;
+}
+
+md-list-item p {
+    color: #11ADA0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* MD Sidenav size can't be changed using md classes,
+   using flex breaks animations.
+*/
+
+md-sidenav,
+md-sidenav.md-locked-open-add-active,
+md-sidenav.md-closed.md-locked-open-add-active,
+md-sidenav.md-locked-open {
+    background-color: #354C5E;
+    width: 251px;
+    min-width: 251px;
+    max-width: 251px;
+}
+
+
+/* Inner page margin.
+*/
+
+.page {
+    margin: 20px;
+}
+
+
+/* Ranking custom CSS
+*/
+
+.ranking {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.rank-item {
+    padding: 30px;
+    border-bottom: 1px solid rgba(170, 170, 180, 0.5);
+}
+
+.card-order-number {
+    margin: 10px 30px 10px 15px;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.perc p {
+    margin: 10px auto 0px auto;
+    width: 40px;
+    padding: 5px 0px;
+    color: #fff;
+    border-radius: 2px;
+    padding-left: 7px;
+    text-align: center;
+}
+
+.perc-div {
+    height: 7px;
+}
+
+.positivo {
+    background-color: #2dd382;
+}
+
+.negativo {
+    background-color: #ff5f33;
+}
+
+.neutro {
+    background-color: #efb900;
+}
+
+.rank-sub {
+    width: auto;
+}
+
+.projetos {
+    margin: 15px 0;
+}
+
+
+/*
+ *  Layout fix
+ */
+
+.heigth-fix {
+    position: absolute;
+}
+
+.center-item {
+    margin: 0 auto;
+}
+
+.center-prop-text {
+    margin: 8px auto;
+}
+
+.button-completo {
+    margin: 12px 0 0 0;
+}
+
+.dialog-padding {
+    padding: 20px;
+}
+
+.icon-logo {
+    padding-left: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 2px;
+}
+
+.ementa-title {
+    margin: 20px auto;
+}
+
+.material-icons.green {
+    color: green;
+}
+
+.material-icons.red {
+    color: red;
+}
+
+.material-icons.yellow {
+    color: yellow;
+}
+
+.material-icons.gray {
+    color: gray;
+}
+
+<<<<<<< HEAD
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.md-dialog-content .hero-area {
+    background: url(../img/hero-area_mm.png) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    color: #fff;
+    /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 1); */
+    padding: 90px 0;
+    height: 100%;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+// Issue with safari and material 1.0 https://github.com/angular/material/issues/5492
+.fix-layout-fill {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+}
+
+.fifthy-fifthy {
+    width: 100%;
+}
